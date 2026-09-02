@@ -3,7 +3,7 @@ from itertools import chain
 
 import pytest
 
-from log_level import Level
+from overhead_loglevel import Level
 
 try:
     import loguru  # type: ignore # noqa: F401
