@@ -38,7 +38,7 @@ def test_pydantic():
 
 @pytest.mark.parametrize(
     "level",
-    chain(Level, Level.__members__.keys(), map(str.lower, Level.__members__.keys())),
+    tuple(chain(Level, Level.__members__.keys(), map(str.lower, Level.__members__.keys()))),
 )
 def test_argparse(level: str | int | Level):
     parser = ArgumentParser()
