@@ -10,6 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v7
       - uses: astral-sh/setup-uv@v9.0.0
+        env:
+          SOURCE_DATE_EPOCH: $(git log -1 --pretty=%ct)
+      - run: echo "SOURCE_DATE_EPOCH: $SOURCE_DATE_EPOCH"
       - run: uv build
       - uses: actions/upload-artifact@v7
         with:
